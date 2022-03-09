@@ -66,6 +66,19 @@ If you met any problems, please contact us.
 We have provided pre-built qemu binaries under `bin/qemu/install`. If you met 
 any problems, please contact us.
 
+If you met any error like the following:
+
+```
+========== Start Running ......
+./.run.exec: line 16: qemu-riscv64: command not found
+```
+
+Remember to add prebuilt qemu to your path. You could add the following line to the end of your path file. Source to update your current shell environment.
+
+```
+export PATH=$PATH:your-path-to/aosp/test/riscv/bin/qemu/install/bin
+```
+
 # 4. kernel
 
 We have provided pre-built kernel image under `bin/kernel`. If you met any 
