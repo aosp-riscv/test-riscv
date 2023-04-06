@@ -10,7 +10,11 @@ if [ $DEBUG = "yes" ]; then
         -E LD_DEBUG=0 \
         -E LD_LIBRARY_PATH=$ENV_LD_LIBRARY_PATH \
         $COMMAND_QEMU &
-    $PATH_GNUTOOLS_BIN/riscv64-unknown-linux-gnu-gdb $COMMAND_GDB -x ./.gdbinit
+    $PATH_GNUTOOLS_BIN/riscv64-unknown-linux-gnu-gdb $COMMAND_GDB \
+        -ex="set sysroot $PATH_SYSROOT" \
+        -ex="set solib-search-path $GDB_SOLIB_SEARCH_PATH" \
+        -ex="dir $ANDROID_BUILD_TOP" \
+        -x $PATH_BASE/bionic/host/.gdbinit
 else
     $PATH_QEMU_BIN/qemu-riscv64 \
         -L $PATH_SYSROOT \

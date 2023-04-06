@@ -1,10 +1,10 @@
 #!/bin/bash
 
-source ./.envsetup
+source $PATH_BASE/bionic/host/.env.init
 
 COMMAND_QEMU="$PATH_EXE_STATIC --no_isolate --gtest_filter=$GTEST_FILTER"
 
-source ./.run.exec
+source $PATH_BASE/bionic/host/.run.exec
 
 
 

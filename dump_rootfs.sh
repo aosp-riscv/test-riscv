@@ -5,11 +5,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-if [ ! -f ./envsetup ]; then
-    echo "Please double-check your working path."
-    exit 1
-fi
-source ./envsetup
+source $PATH_BASE/.env.init
 
 mkdir -p $PATH_OUT
 

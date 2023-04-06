@@ -1,5 +1,0 @@
-{
-  "description": "QEMU vhost-user-gpu",
-  "type": "gpu",
-  "binary": "/aosp/wangchen/test-qemu/install/libexec/vhost-user-gpu"
-}

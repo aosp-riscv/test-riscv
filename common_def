@@ -1,6 +1,0 @@
-UBUNTU_VER=$(lsb_release --release | cut -f2)
-
-AOSP_PRODUCT=emulator_riscv64
-#AOSP_PRODUCT=generic_riscv64
-
-

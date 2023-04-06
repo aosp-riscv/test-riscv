@@ -1,10 +1,6 @@
 #!/bin/bash
 
-if [ ! -f ./envsetup ]; then
-    echo "Please double-check your working path."
-    exit 1
-fi
-source ./envsetup
+source $PATH_BASE/.env.init
 
 PATH_ROOTFS=$PATH_OUT/rootfs.img
 

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 source build/envsetup.sh
-lunch aosp_riscv64-eng
-mmm bionic
-mmm external/icu
-mmm system/netd/client
-mmm system/core/run-as
+lunch aosp_cf_riscv64_slim-userdebug
+#mmm bionic
+#mmm external/icu
+#mmm system/netd/client
+#mmm system/core/run-as

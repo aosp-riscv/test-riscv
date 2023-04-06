@@ -1,15 +1,6 @@
 #!/bin/bash
 
-if ! [ -x "$(command -v mke2fs)" ]; then
-  echo 'Error: mke2fs is not installed.' >&2
-  exit 1
-fi
-
-if [ ! -f ./envsetup ]; then
-    echo "Please double-check your working path."
-    exit 1
-fi
-source ./envsetup
+source $PATH_BASE/.env.init
 
 mkdir -p $PATH_OUT
 PATH_IMAGE_FILE=$PATH_OUT/rootfs.img
@@ -45,7 +36,7 @@ mkdir -p $PATH_ROOT_DIR
 # ├── tests <-- new created
 # └── usr <--- copied from busybox/_install/usr
 
-PATH_TEST_BIONIC=$PATH_PRJ/bionic/target
+PATH_TEST_BIONIC=$PATH_BASE/bionic/target
 
 cd $PATH_ROOT_DIR \
     && cp -r $PATH_AOSP_OUT_TARGET_PRODUCT_RISCV64_APEX . \
@@ -61,27 +52,27 @@ cd $PATH_ROOT_DIR \
     \
     && mkdir -p proc \
     \
-    && cp -r $PATH_BUSYBOX_INSTALL/sbin . \
+    && cp -r $PATH_ROOTFS_TEMPLATE/sbin . \
     \
     && mkdir -p sys \
     \
     && cp -r $PATH_AOSP_OUT_TARGET_PRODUCT_RISCV64_SYSTEM . \
-    && cp -r $PATH_BUSYBOX_INSTALL/bin ./system/ \
+    && cp -r $PATH_ROOTFS_TEMPLATE/bin ./system/ \
     && mkdir -p ./system/etc/init.d \
     \
     && mkdir -p tests/bionic \
     && cp $PATH_TEST_BIONIC/*.sh tests/bionic/ \
     \
-    && cp -r $PATH_BUSYBOX_INSTALL/usr . \
+    && cp -r $PATH_ROOTFS_TEMPLATE/usr . \
     \
-    && cp -r $PATH_BUSYBOX_INSTALL/linuxrc . \
+    && cp -r $PATH_ROOTFS_TEMPLATE/linuxrc . \
     \
     && mkdir -p linkerconfig \
     && mkdir -p linkerconfig/com.android.runtime \
     && touch ./linkerconfig/ld.config.txt \
     && touch ./linkerconfig/com.android.runtime/ld.config.txt
 
-cd $PATH_PRJ
+cd $PATH_BASE
 touch $PATH_ROOT_DIR/system/etc/init.d/rcS
 cat > $PATH_ROOT_DIR/system/etc/init.d/rcS <<EOF
 #!/bin/sh

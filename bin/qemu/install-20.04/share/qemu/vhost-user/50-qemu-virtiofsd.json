@@ -1,5 +1,0 @@
-{
-  "description": "QEMU virtiofsd vhost-user-fs",
-  "type": "fs",
-  "binary": "/aosp/wangchen/test-qemu/install/libexec/virtiofsd"
-}

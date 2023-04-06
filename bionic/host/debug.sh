@@ -2,12 +2,12 @@
 
 # debug bionic-unit-tests
 
-source ./.envsetup
+source $PATH_BASE/bionic/host/.env.init
 
 COMMAND_QEMU="$PATH_EXE --no_isolate --gtest_filter=$GTEST_FILTER"
 
 DEBUG=yes
 COMMAND_GDB="$PATH_EXE"
 
-source ./.run.exec
+source $PATH_BASE/bionic/host/.run.exec
 
