@@ -1,5 +1,12 @@
 **How to setup testing environment**
 
+**NOTE: Latest version please click [HERE(github)][100] or [HERE(gitee)][101](both in Chinese).**
+
+This text is just remained for archivement.
+
+[100]:https://github.com/aosp-riscv/working-group/blob/master/articles/20230407-test-riscv.md
+[101]:https://gitee.com/aosp-riscv/working-group/blob/master/articles/20230407-test-riscv.md
+
 <!-- TOC -->
 
 - [1. Precondition](#1-precondition)
