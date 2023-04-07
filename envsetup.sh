@@ -14,7 +14,7 @@ export PATH_BASE
 ################################################################################
 # Following PATH_* are all can be customized
 ################################################################################
-PATH_QEMU_BIN=/home/u/bin/qemu/bin
+PATH_QEMU_BIN=
 if [[ -z "${PATH_QEMU_BIN}" ]]; then
   echo "PATH_QEMU_BIN has not been setup, which is required for riscv test!!!"
   exit 1
@@ -23,7 +23,7 @@ else
   export PATH_QEMU_BIN
 fi
 
-PATH_GNUTOOLS_BIN=/home/u/bin/riscv/bin
+PATH_GNUTOOLS_BIN=
 if [[ -z "${PATH_GNUTOOLS_BIN}" ]]; then
   echo "PATH_GNUTOOLS_BIN has not been setup, which is required for riscv test!!!"
   exit 1
